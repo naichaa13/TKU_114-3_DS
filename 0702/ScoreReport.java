@@ -21,5 +21,7 @@ public class ScoreReport {
         System.out.println("Math ： " + Math);
         double Averagescore = (Java + English + Math) / 3;
         System.out.println("平均: " + Averagescore);
+
+        sc.close();
     }
 }

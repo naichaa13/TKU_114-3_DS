@@ -2,7 +2,7 @@ public class CourseInfo {
     public static void main(String[] args) {
         String courseName = "Introduction to Java";
         int credits = 3;
-        double hours = 2.5;
+        double hours = 3;
         boolean required = true;
 
         System.out.println("Name: " + courseName);
