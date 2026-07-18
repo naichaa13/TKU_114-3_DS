@@ -1,10 +1,12 @@
 public class SequentialSearch {
-    public static int findIndex(int[] values,int target){
-        for(int i=0;i<values.length,i++){
-            if(values[i]==target){
+    public static int findIndex(int[] values, int target) {
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] == target) {
                 return i;
             }
         }
+        return -1;
+
     }
 
     public static void main(String[] args) {
