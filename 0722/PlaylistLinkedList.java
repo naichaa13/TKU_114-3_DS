@@ -11,7 +11,7 @@ public class PlaylistLinkedList {
         return size;
     }
 
-    // 1. 尾端新增 (addLast) - 規則：歌曲代碼不可重複
+    // 1. 尾端新增 (addLast)
     public boolean addLast(String code, String name) {
         if (code == null || code.trim().isEmpty() || findByCode(code) != null) {
             return false; // 代碼為空或已存在，拒絕新增
@@ -51,14 +51,14 @@ public class PlaylistLinkedList {
             return false;
         }
 
-        // 情況 A：刪除第一首 (head)
+        // 刪除第一首 (head)
         if (head.getCode().equalsIgnoreCase(code.trim())) {
             head = head.next;
             size--;
             return true;
         }
 
-        // 情況 B：刪除中間或最後一首
+        // 刪除中間或最後一首
         PlaylistNode previous = head;
         PlaylistNode current = head.next;
 
@@ -72,7 +72,7 @@ public class PlaylistLinkedList {
             current = current.next;
         }
 
-        return false; // 找不到對應代碼
+        return false;
     }
 
     // 4. 顯示完整播放順序

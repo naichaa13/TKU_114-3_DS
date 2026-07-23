@@ -5,7 +5,7 @@ public class DeliveryProcessingSystem {
     private Deque<DeliveryTask> waitingQueue = new ArrayDeque<>();
     private Deque<DeliveryTask> completedStack = new ArrayDeque<>();
 
-    // 1. 新增待配送工作 (offer 到 Queue 尾端)
+    // 1. 新增
     public void addTask(String taskId, String destination) {
         DeliveryTask task = new DeliveryTask(taskId, destination);
         waitingQueue.offer(task);
@@ -39,7 +39,7 @@ public class DeliveryProcessingSystem {
             return;
         }
         DeliveryTask task = completedStack.pop();
-        waitingQueue.offer(task); // 依照題意：復原後工作回到等待 Queue 尾端
+        waitingQueue.offer(task); // 復原後工作回到等待 Queue 尾端
         System.out.println("[復原任務] 已將任務 " + task.getTaskId() + " 撤銷，放回等待佇列尾端。");
     }
 
@@ -60,7 +60,7 @@ public class DeliveryProcessingSystem {
             }
         }
 
-        System.out.println("\n--- 【完成紀錄明細 (Stack 頂端到底部)】 ---");
+        System.out.println("\n--- 【完成紀錄明細】 ---");
         if (completedStack.isEmpty()) {
             System.out.println("(無)");
         } else {
@@ -70,7 +70,7 @@ public class DeliveryProcessingSystem {
                 i++;
             }
         }
-        System.out.println("========================");
+        System.out.println("\n---------------------");
     }
 
     public static void main(String[] args) {
@@ -84,8 +84,8 @@ public class DeliveryProcessingSystem {
         system.showSystemStatus();
 
         System.out.println("\n--- 執行完成工作 ---");
-        system.processNextTask(); // 完成 D01
-        system.processNextTask(); // 完成 D02
+        system.processNextTask();
+        system.processNextTask();
 
         system.showSystemStatus();
 
